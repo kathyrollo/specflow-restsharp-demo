@@ -9,8 +9,8 @@ Create an `env.json` file under the `ReqRes.Specs` project.
 ```
 {
   "BASE_URL": "https://reqres.in",
-  "EMAIL": "<myValue>",
-  "PASSWORD": "<myValue>"
+  "EMAIL": "harry.potter@hogwarts.edu",
+  "PASSWORD": "alohomora"
 }
 ```
 
@@ -20,13 +20,9 @@ The file only creates runtime env vars. It is automatically ignored by Git and n
 
 Configuration variables and secrets are now [managed at CI-level](https://docs.github.com/en/actions/learn-github-actions/variables#creating-configuration-variables-for-a-repository).
 
-![secrets](https://user-images.githubusercontent.com/28589393/221486103-8d66856f-c2eb-42e0-bc92-274a3f1b6b27.png)
-
 ![vars](https://user-images.githubusercontent.com/28589393/221486106-b90455c5-3e61-49d0-aea4-dc9cab6c61e9.png)
 
-> **Note:**
-> 
-> The same feature is present in all major devops products like [Azure Pipelines](https://learn.microsoft.com/en-us/azure/devops/pipelines/process/set-secret-variables?view=azure-devops), [GitLab CI/CD](https://docs.gitlab.com/ee/ci/variables/), and [Bitbucket Pipelines](https://support.atlassian.com/bitbucket-cloud/docs/variables-and-secrets/).
+![secrets](https://user-images.githubusercontent.com/28589393/221486103-8d66856f-c2eb-42e0-bc92-274a3f1b6b27.png)
 
 `github-actions.yml:`
 
@@ -37,3 +33,7 @@ env:
   PASSWORD: ${{ secrets.PASSWORD }}
 ```
 The secret `PASSWORD` is never exposed.
+
+> **Note:**
+> 
+> The same feature is present in all major devops products like [Azure Pipelines](https://learn.microsoft.com/en-us/azure/devops/pipelines/process/set-secret-variables?view=azure-devops), [GitLab CI/CD](https://docs.gitlab.com/ee/ci/variables/), and [Bitbucket Pipelines](https://support.atlassian.com/bitbucket-cloud/docs/variables-and-secrets/).
