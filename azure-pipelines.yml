@@ -37,6 +37,7 @@ steps:
         !**\*TestAdapter.dll
         !**\obj\**
       searchFolder: "$(System.DefaultWorkingDirectory)"
+
     env:
       BASE_URL: "$(BASE_URL)"
       EMAIL: "$(EMAIL)"
