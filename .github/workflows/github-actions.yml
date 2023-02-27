@@ -1,6 +1,11 @@
 name: SpecFlow RestSharp Demo
 
-on: [push]
+on: [push, workflow_dispatch]
+
+env:
+  BASE_URL: $BASE_URL
+  EMAIL: $EMAIL
+  PASSWORD: $PASSWORD
 
 jobs:
   build:
