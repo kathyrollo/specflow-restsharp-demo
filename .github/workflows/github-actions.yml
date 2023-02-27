@@ -3,17 +3,17 @@ name: SpecFlow RestSharp Demo
 on: [push, workflow_dispatch]
 
 env:
-  BASE_URL: $BASE_URL
-  EMAIL: $EMAIL
-  PASSWORD: $PASSWORD
+  BASE_URL: ${{ vars.BASE_URL }}
+  EMAIL: ${{ vars.EMAIL }}
+  PASSWORD: ${{ secrets.PASSWORD }}
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
+      - name: Check out repo
         uses: actions/checkout@v3
-      - name: Setup .NET SDK
+      - name: Set up .NET SDK
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: "6.x"
