@@ -9,8 +9,8 @@ Create an `env.json` file under the `ReqRes.Specs` project.
 ```
 {
   "BASE_URL": "https://reqres.in",
-  "EMAIL": "harry.potter@hogwarts.edu",
-  "PASSWORD": "alohomora"
+  "EMAIL": "youremail@domain.com",
+  "PASSWORD": "yoursecret"
 }
 ```
 
