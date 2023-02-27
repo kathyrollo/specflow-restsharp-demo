@@ -8,7 +8,7 @@ env:
   PASSWORD: ${{ secrets.PASSWORD }}
 
 jobs:
-  build:
+  api-testing:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repo
@@ -16,7 +16,7 @@ jobs:
       - name: Set up .NET SDK
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: "6.x"
+          dotnet-version: 6.x
       - name: Install dependencies
         run: dotnet restore
       - name: Build solution
