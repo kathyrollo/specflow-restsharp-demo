@@ -3,9 +3,9 @@ name: SpecFlow RestSharp Demo
 on: [push, workflow_dispatch]
 
 env:
-  BASE_URL: $BASE_URL
-  EMAIL: $EMAIL
-  PASSWORD: $PASSWORD
+  BASE_URL: ${{ vars.BASE_URL }}
+  EMAIL: ${{ vars.EMAIL }}
+  PASSWORD: ${{ secrets.PASSWORD }}
 
 jobs:
   build:
