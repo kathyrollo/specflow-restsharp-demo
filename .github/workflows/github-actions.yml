@@ -3,9 +3,9 @@ name: SpecFlow RestSharp Demo
 on: [push, workflow_dispatch]
 
 env:
-  BASE_URL: https://reqres.in
-  EMAIL: eve.holt@reqres.in
-  PASSWORD: cityslicka
+  BASE_URL: $env:BASE_URL
+  EMAIL: $env:EMAIL
+  PASSWORD: $env:PASSWORD
 
 jobs:
   build:
