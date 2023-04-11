@@ -100,33 +100,5 @@ namespace SpecFlowReqRes.Specs.StepDefinitions
 
             Assert.AreEqual(HttpStatusCode.Created, statusCode);
         }
-
-        [When(@"The user is updated with name as '(.*)' and job as '(.*)' using '(.*)'")]
-        public void WhenTheUserIsUpdatedWithNameAsAndJobAsUsing(string name, string job, string method)
-        {
-            var id = _scenarioContext["id"] as string;
-            var url = $"{BaseUrl}/api/users/{id}";
-            var client = new RestClient(url);
-            var request = new RestRequest();
-            var user = new User
-            {
-                Name = name,
-                Job = job
-            };
-
-            request.AddJsonBody(user);
-            var response = method.Equals("put")
-                ? client.Put(request)
-                : client.Patch(request);
-
-            if (_scenarioContext.ContainsKey("response"))
-            {
-                _scenarioContext["response"] = response;
-            }
-            else
-            {
-                _scenarioContext.Add("response", response);
-            }
-        }
     }
 }

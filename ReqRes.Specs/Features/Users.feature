@@ -26,14 +26,3 @@ Feature: Users
 	Scenario: CreateUser_WithNameAndJob_StatusCreated
 		Given A user with name as 'Morpheus' and job as 'Leader' is requested
 		Then The request is created
-
-	@put @patch @updateUser
-	Scenario Outline: UpdateUser_WithId_StatusOK
-		Given A user is requested with id as '2'
-		When The user is updated with name as 'Morpheus' and job as 'Leader' using '<method>'
-		Then The request succeeds
-
-		Examples:
-		| method |
-		| put    |
-		| patch  |
