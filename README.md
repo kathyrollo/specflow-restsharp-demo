@@ -1,5 +1,25 @@
 # SpecFlow-RestSharp Demo
 
+## Feature File
+
+A `Scenario Outline` with `Examples` table is used for data-driven testing.
+
+```
+@users
+Feature: Users
+
+	@get @listUsers
+	Scenario Outline: ListUsers_FindByName_ReturnUser
+		Given The list of users is requested
+		When The name '<firstName>' '<lastName>' is searched
+		Then The user exists
+
+		Examples:
+			| firstName | lastName |
+			| Janet     | Weaver   |
+			| Rachel    | Howell   |
+```
+
 ## Environment Variables
 
 Create an `env.json` file under the `ReqRes.Specs` project.
